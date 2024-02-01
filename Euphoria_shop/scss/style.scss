@@ -24,20 +24,20 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 @import "_functions";
 // Компоненти
 @import "_common";
-@import "_header";
-@import "_slider";
-@import "_sales";
-@import "_new";
-@import "_save";
-@import "_everyday";
-@import "_top";
-@import "_limelight";
-@import "_feedback";
-@import "_footer.scss";
+// @import "_header";
+// @import "_slider";
+// @import "_sales";
+// @import "_new";
+// @import "_save";
+// @import "_everyday";
+// @import "_top";
+// @import "_limelight";
+// @import "_feedback";
+// @import "_footer.scss";
 
 body {
   font-family: "Causten", sans-serif;
-  font-size: toRem(14);
+  font-size: toRem(16);
   font-weight: 400;
   color: $text-color;
 }
@@ -47,11 +47,9 @@ body {
   flex-direction: column;
   min-height: 100%;
   overflow: clip;
-  
   main {
     flex-grow: 1;
   }
-
 }
 
 [class*="__container"] {

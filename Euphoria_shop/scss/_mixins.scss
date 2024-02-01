@@ -12,7 +12,21 @@
   grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 
-%flex {
+
+%font-family {
+  font-family: "Causten", sans-serif;
+}
+
+%second-family {
+  font-family: "Core Sans", sans-serif;
+}
+
+%flexCenter {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+%flex {
+  display: flex;
 }

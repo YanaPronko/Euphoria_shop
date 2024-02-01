@@ -1,17 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:800&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Roboto:regular,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Poppins:500&display=swap');
-
-@font-face {
-  font-family: 'Mintaka';
-  src:
-    url('../fonts/Mintaka.woff2') format('woff2'),
-    url('../fonts/Mintaka.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: 'Causten';
   src:
@@ -63,7 +49,7 @@
 }
 
 @font-face {
-  font-family: 'Core Sans C';
+  font-family: 'Core Sans';
   src:
     url('../fonts/CoreSansC-45Regular.woff2') format('woff2'),
     url('../fonts/CoreSansC-45Regular.woff') format('woff');
@@ -73,7 +59,7 @@
 }
 
 @font-face {
-  font-family: 'Core Sans C';
+  font-family: 'Core Sans';
   src:
     url('../fonts//CoreSansC-55Medium.woff2') format('woff2'),
     url('../fonts/CoreSansC-55Medium.woff') format('woff');
@@ -83,7 +69,7 @@
 }
 
 @font-face {
-  font-family: 'Core Sans C';
+  font-family: 'Core Sans';
   src:
     url('../fonts/CoreSansC-75ExtraBold.woff2') format('woff2'),
     url('../fonts/CoreSansC-75ExtraBold.woff') format('woff');
@@ -93,7 +79,7 @@
 }
 
 @font-face {
-  font-family: 'Core Sans C';
+  font-family: 'Core Sans';
   src:
     url('../fonts/CoreSansC-85Heavy.woff2') format('woff2'),
     url('../fonts/CoreSansC-85Heavy.woff') format('woff');
