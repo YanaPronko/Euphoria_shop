@@ -1,0 +1,220 @@
+.title {
+  @extend %second-family;
+  display: flex;
+  align-items: flex-start;
+  color: $dark-color;
+  @include adaptiveValue("font-size", 34, 26);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: toRem(0.68);
+  gap: toEm(20, 34);
+  &::before {
+    content: "";
+    flex: 0 0 toRem(6);
+    width: toRem(6);
+    height: toEm(30, 34);
+    margin-top: toEm(5, 34);
+    border-radius: toRem(10);
+    background: $bright-color;
+  }
+}
+
+// good preview card
+
+.item-product {
+  position: relative;
+  display: grid;
+  gap: toRem(30);
+  &--category {
+    gap: toRem(15);
+  }
+  &__favorite {
+    @extend %flex-center;
+    position: absolute;
+    top: toRem(27);
+    right: toRem(20);
+    width: toRem(32);
+    height: toRem(32);
+    background-color: $extra-light-color;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1;
+    @media (any-hover: hover) {
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    border-radius: toRem(12);
+    transition: all 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.01);
+      }
+    }
+  }
+
+  &__img-link {
+    @include img(282, 370);
+    border-radius: toRem(12);
+    .item-product__img-link & {
+      @include img(270, 393);
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    row-gap: toRem(5);
+    column-gap: toRem(35);
+  }
+
+  &__title {
+    min-width: 0;
+    color: $dark-color;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $bright-color;
+        text-decoration: underline;
+      }
+    }
+    .item-product--category & {
+      font-weight: 700;
+      line-height: 1.6;
+      letter-spacing: toRem(-0.715);
+      font-size: toRem(18);
+    }
+  }
+
+  &__title-link {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__label {
+    grid-row: 2 / 3;
+    color: $text-color;
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: capitalize;
+  }
+
+  &__price,
+  &__arrow {
+    grid-row: span 2;
+  }
+
+  &__price {
+    grid-row: 1 / 3;
+    align-self: center;
+    padding: toRem(10) toRem(20);
+    color: $dark-color;
+    font-size: toRem(14);
+    font-weight: 700;
+    line-height: 1.2;
+    border-radius: toRem(8);
+    background: $light-color;
+  }
+  &__arrow {
+    @extend %flex-center;
+    color: #797979;
+    transition: all 0.3s ease;
+    &::before {
+      font-size: toRem(13);
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $bright-color;
+      }
+    }
+  }
+}
+
+
+// Buttons
+.button {
+  padding: toRem(16) toRem(20);
+  border-radius: toRem(8);
+  background: $bright-color;
+  color: $extra-light-color;
+  text-align: center;
+  font-size: toRem(18);
+  font-weight: 500;
+  line-height: 1.2;
+  transition: all 0.3s ease;
+  @media(any-hover: hover) {
+    &:hover {
+      background: #6620C1;
+      box-shadow: 0 toRem(3) toRem(4) 0 rgba(0, 0, 0, 0.10);
+    }
+  }
+  &:focus {
+    background: #6620C1;
+    outline: 2px solid #6620C1;;
+  }
+  &:disabled {
+    background: #EAEAEA;
+    cursor: default;
+  }
+
+  &--border {
+    border: toRem(1) solid $dark-color;
+    background: transparent;
+    color: $dark-color;
+    @media(any-hover: hover) {
+      &:hover {
+        background: rgba(102, 32, 193, 0.03);
+        box-shadow: none;
+      }
+    }
+    &:focus {
+      border: toRem(1) solid $bright-color;
+      outline: toRem(1) solid $bright-color;
+      background: rgba(102, 32, 193, 0.03);
+    }
+    &:disabled {
+      background: #EAEAEA;
+      border: 0;
+      cursor: default;
+    }
+  }
+  &--border-white {
+    border: toRem(1) solid $extra-light-color;
+    background: transparent;
+    @media(any-hover: hover) {
+      &:hover {
+        background: transparent;
+        border: toRem(1) solid $bright-color;
+        outline: toRem(1) solid $bright-color;
+        box-shadow: none;
+      }
+    }
+    &:focus {
+      border: toRem(1) solid $bright-color;
+      outline: toRem(1) solid $bright-color;
+      background: transparent;
+    }
+    &:disabled {
+      color: $dark-color;
+      background: #EAEAEA;
+      border: 0;
+      outline: 0;
+      cursor: default;
+    }
+  }
+}
+
+// For test
+.buttons {
+  background: $dark-color;
+}

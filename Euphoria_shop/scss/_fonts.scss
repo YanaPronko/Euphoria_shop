@@ -87,3 +87,12 @@
   font-weight: 800;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'icons';
+  src:  url('../fonts/icons.woff') format('woff'),
+        url('../fonts/icons.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
