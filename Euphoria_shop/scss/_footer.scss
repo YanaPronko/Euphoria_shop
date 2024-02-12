@@ -1,0 +1,200 @@
+.footer {
+  // .footer__container
+  @include adaptiveValue('padding-top', 59, 30);
+  @include adaptiveValue('padding-bottom', 59, 30);
+  color: $light-color;
+  background-color: $dark-color;
+
+  &__container {
+  }
+
+  // .footer__menu-block
+  &__menu-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(toRem(162), max-content));
+    @include adaptiveValue("column-gap", 60, 30, 0, $containerWidth, 768);
+		@include adaptiveValue("padding-left", 85, 0, 0, $containerWidth, 768);
+		@include adaptiveValue("padding-right", 85, 0, 0, $containerWidth, 768);
+    row-gap: toRem(20);
+    &:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 20);
+		}
+    @media(max-width: toEm(767.98)) {
+      grid-template-columns: repeat(auto-fit, minmax(toRem(250), max-content));
+    }
+  }
+
+  // .footer__menu
+  &__menu {
+  }
+
+  // .footer__subtitle
+  &__subtitle {
+    @include adaptiveValue("font-size", 28.5, 24);
+    &:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 10);
+		}
+    font-weight: 700;
+    line-height: 120%;
+  }
+  // .footer__list
+  &__list {
+
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 25, 5);
+    }
+    font-size: toRem(18);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  // .footer__link
+
+  &__link {
+    transition: all 0.3s ease;
+    @media(any-hover: hover) {
+      &:hover {
+        color: $bright-color
+      }
+    }
+  }
+  // .footer__adress
+  &__adress {
+  }
+
+  // .footer__body
+
+  &__body {
+    @include adaptiveValue("padding-left", 85, 0, 0, $containerWidth, 768);
+		@include adaptiveValue("padding-right", 85, 0, 0, $containerWidth, 768);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 20);
+    }
+    display: flex;
+    align-items: flex-end;
+    gap: toRem(25);
+    flex-wrap: wrap;
+    @media(max-width: toEm(767.98)) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+  }
+
+  // .footer__social
+  &__social {
+    flex: 1 1 auto;
+    align-self: flex-end;
+    @media(max-width: toEm(767.98)) {
+      align-self: stretch;
+    }
+  }
+
+  // .footer__apps
+  &__apps {
+    @media(min-width: toEm(1110)) {
+      flex: 0 0 37.264151%; /* 395/1060 */
+    }
+  }
+
+  // .footer__categories
+  &__categories {
+    @include adaptiveValue("padding-left", 85, 0, 0, $containerWidth, 768);
+		@include adaptiveValue("padding-right", 85, 0, 0, $containerWidth, 768);
+    @include adaptiveValue("padding-top", 30, 15);
+    @include adaptiveValue("padding-bottom", 30, 15);
+    border-bottom: toRem(1) solid rgba(190, 188, 189, 0.4);
+    border-top: toRem(1) solid  rgba(190, 188, 189, 0.4);
+  }
+
+  // .footer__label
+
+  &__subtitle {
+  }
+
+  // .footer__btn
+
+  &__btn {
+  }
+
+  // .footer__copyright
+
+  &__copyright {
+  }
+}
+.social {
+  // .social__list
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(10);
+  }
+
+  // .social__item
+  &__item {
+    flex: 0 0 toRem(37);
+  }
+
+  // .social__link
+  &__link {
+    @extend %flex-center;
+    height: toRem(37);
+    background-color: $light-color;
+    border-radius: toRem(8);
+    color: $dark-color;
+    transition: all 0.3s ease;
+    @media(any-hover: hover) {
+      &:hover {
+        background-color: #BEBCBD;
+        color: $bright-color;
+      }
+    }
+  }
+}
+
+.apps {
+  display: flex;
+  flex-wrap: wrap;
+  @include adaptiveValue('gap', 21, 10);
+  // .apps__link
+
+  &__link {
+    flex: 0 0 toRem(153);
+    transition: all 0.3s ease;
+    @media(any-hover: hover) {
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  // .apps__item
+  &__item {
+    width: toRem(153);
+    height: toRem(51);
+  }
+}
+
+.summary {
+  &__btn {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    gap: toRem(20);
+    &::before {
+      @include adaptiveValue('font-size', 15, 12);
+      margin-top: toEm(11, 15);
+      transition: all 0.3s ease;
+      .active & {
+				transform: rotate(-180deg);
+			}
+    }
+    @media (any-hover: hover) {
+			&:hover {
+				color: $bright-color;
+			}
+		}
+  }
+}

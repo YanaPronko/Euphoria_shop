@@ -1,17 +1,5 @@
 @use "sass:math";
 
-// Мінімальна ширина сторінки
-$minWidth: 320;
-// Ширина полотна (макету)
-$maxWidth: 1440;
-// Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 1240;
-// Загальний відступ у контейнера
-// (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
-$containerPadding: 30;
-// Ширина спрацьовування першого брейкпоінту
-$containerWidth: $maxWidthContainer + $containerPadding;
-
 // Шрифти
 @import "_fonts";
 // Іконкі
@@ -26,7 +14,8 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 @import "_functions";
 // Компоненти
 @import "_common";
-// @import "_header";
+@import "_header";
+
 // @import "_slider";
 // @import "_sales";
 // @import "_new";
@@ -35,13 +24,18 @@ $containerWidth: $maxWidthContainer + $containerPadding;
 // @import "_top";
 // @import "_limelight";
 // @import "_feedback";
-// @import "_footer.scss";
+@import "_footer.scss";
 
 body {
   font-family: "Causten", sans-serif;
   font-size: toRem(16);
   font-weight: 400;
   color: $text-color;
+  &.menu-open {
+		overflow: hidden;
+		touch-action: none;
+		overscroll-behavior: none;
+	}
 }
 
 .wrapper {
@@ -52,10 +46,14 @@ body {
   main {
     flex-grow: 1;
   }
+  @media (max-width: toEm(540)) {
+		padding-bottom: toRem(75);
+	}
 }
 
 [class*="__container"] {
   margin: 0 auto;
   max-width: #{$containerWidth}px;
-  padding: 0 toRem(15);
+  padding-left: toRem(15);
+  padding-right: toRem(15);
 }
