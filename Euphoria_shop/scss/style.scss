@@ -16,7 +16,7 @@
 @import "_common";
 @import "_header";
 
-// @import "_slider";
+@import "_slider";
 // @import "_sales";
 // @import "_new";
 // @import "_save";
@@ -36,6 +36,7 @@ body {
 		touch-action: none;
 		overscroll-behavior: none;
 	}
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -56,4 +57,12 @@ body {
   max-width: #{$containerWidth}px;
   padding-left: toRem(15);
   padding-right: toRem(15);
+}
+
+.home {
+  &__section {
+    &:not(:last-child) {
+      @include adaptiveValue('margin-bottom', 130, 40);
+    }
+  }
 }

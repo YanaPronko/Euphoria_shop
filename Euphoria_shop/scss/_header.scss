@@ -1,11 +1,12 @@
 .header {
   // .header__container
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   border-bottom: toRem(1) solid #bebcbd;
   background-color: $extra-light-color;
+  z-index: 50;
   &__container {
     display: flex;
     justify-content: space-between;

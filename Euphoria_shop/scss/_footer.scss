@@ -5,9 +5,6 @@
   color: $light-color;
   background-color: $dark-color;
 
-  &__container {
-  }
-
   // .footer__menu-block
   &__menu-block {
     display: grid;
@@ -24,10 +21,6 @@
     }
   }
 
-  // .footer__menu
-  &__menu {
-  }
-
   // .footer__subtitle
   &__subtitle {
     @include adaptiveValue("font-size", 28.5, 24);
@@ -36,10 +29,10 @@
 		}
     font-weight: 700;
     line-height: 120%;
-  }
-  // .footer__list
-  &__list {
 
+    &.summary {
+      margin-bottom: 0;
+    }
   }
 
   &__item {
@@ -49,9 +42,10 @@
     font-size: toRem(18);
     font-weight: 500;
     line-height: 1.2;
+    text-transform: capitalize;
   }
-  // .footer__link
 
+  // .footer__link
   &__link {
     transition: all 0.3s ease;
     @media(any-hover: hover) {
@@ -59,13 +53,12 @@
         color: $bright-color
       }
     }
-  }
-  // .footer__adress
-  &__adress {
+    &--mail {
+      text-transform: lowercase;
+    }
   }
 
   // .footer__body
-
   &__body {
     @include adaptiveValue("padding-left", 85, 0, 0, $containerWidth, 768);
 		@include adaptiveValue("padding-right", 85, 0, 0, $containerWidth, 768);
@@ -106,21 +99,34 @@
     @include adaptiveValue("padding-bottom", 30, 15);
     border-bottom: toRem(1) solid rgba(190, 188, 189, 0.4);
     border-top: toRem(1) solid  rgba(190, 188, 189, 0.4);
-  }
 
-  // .footer__label
+    .footer__list {
+      opacity: 0;
+      max-height: 0;
+      padding-top: 0;
+      box-sizing: content-box;
+      will-change: max-height;
+      overflow: hidden;
+      transform: translateY(100%);
+      transition: all 0.5s ease-in-out;
 
-  &__subtitle {
-  }
-
-  // .footer__btn
-
-  &__btn {
+      &.open {
+        transform: translateY(0);
+        opacity: 1;
+        max-height: fit-content;
+        padding-top: toRem(20);
+      }
+    }
   }
 
   // .footer__copyright
-
   &__copyright {
+    @include adaptiveValue("padding-top", 40, 10);
+    color: $extra-light-color;
+    font-size: toRem(18p);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
   }
 }
 .social {
@@ -157,8 +163,8 @@
   display: flex;
   flex-wrap: wrap;
   @include adaptiveValue('gap', 21, 10);
-  // .apps__link
 
+  // .apps__link
   &__link {
     flex: 0 0 toRem(153);
     transition: all 0.3s ease;
@@ -177,12 +183,17 @@
 }
 
 .summary {
+  &.disabled {
+    pointer-events: none;
+    cursor: default;
+  }
   &__btn {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     width: 100%;
     gap: toRem(20);
+    cursor: pointer;
     &::before {
       @include adaptiveValue('font-size', 15, 12);
       margin-top: toEm(11, 15);
@@ -196,5 +207,9 @@
 				color: $bright-color;
 			}
 		}
+    .disabled & {
+      pointer-events: none;
+      cursor: default;
+    }
   }
 }

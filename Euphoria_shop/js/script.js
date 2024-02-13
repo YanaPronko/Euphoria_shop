@@ -21,22 +21,26 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // Swiper
+  const heroSlider = document.querySelector('.hero');
+  if (heroSlider) {
+    const heroSwiper = new Swiper('.hero', {
+      // Optional parameter
+      lazy: true,
+      // If we need pagination
+      pagination: {
+        el: '.hero__pagination',
+        clickable: true,
+      },
+      autoHeight: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.hero__arrow--next',
+        prevEl: '.hero__arrow--prev',
+      },
+    });
+  }
 
-  // const swiper = new Swiper(".swiper", {
-  //   // Optional parameter
-  //   lazy: true,
-  //   // If we need pagination
-  //   pagination: {
-  //     el: ".slider-swiper__pagination",
-  //     clickable: true,
-  //   },
 
-  //   // Navigation arrows
-  //   navigation: {
-  //     nextEl: ".swiper-button-next",
-  //     prevEl: ".swiper-button-prev",
-  //   },
-  // });
 
   // const feedbackSwiper = new Swiper(".feedback__swiper", {
   //   // Optional parameter
@@ -62,4 +66,41 @@ window.addEventListener("DOMContentLoaded", () => {
   //     },
   //   },
   // });
+
+  // Spoiler
+  const spoilerFooterParent = document.querySelector('.footer__categories');
+
+  if (spoilerFooterParent) {
+    spoilerFooterParent.addEventListener('click', toggleSpoiler);
+  }
+
+  function toggleSpoiler(e) {
+    const target = e.target.closest('[data-spoiler]');
+    if (target) {
+      target.classList.toggle('active');
+      target.classList.add('disabled');
+      toggleSlide(target.nextElementSibling);
+      target.nextElementSibling.addEventListener('transitionend', () => {
+        target.classList.remove('disabled');
+      });
+    }
+  }
+
 });
+
+function toggleSlide(target) {
+  // target.classList.contains('close') ? slideIn(target) : slideOut(target);
+  target.classList.toggle('open');
+}
+
+function slideIn(target) {
+  target.classList.remove('close');
+  target.classList.add('open');
+  // target.style.maxHeight = target.scrollHeight + 'px';
+}
+
+function slideOut(target) {
+  target.classList.remove('open');
+  target.classList.add('close');
+  // target.style.maxHeight = null;
+}
