@@ -1,0 +1,73 @@
+.new {
+  // .new__slider
+  &__slider {
+    position: relative;
+    @include adaptiveValue('padding-left', 38, 20, 2, $containerWidth, 480);
+    @include adaptiveValue('padding-right', 38, 20, 2, $containerWidth, 480);
+    background-color: $extra-light-color;
+    @media (max-width: toEm(480)) {
+      margin-right: toRem(-15);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include adaptiveValue('width', 38, 20, 2, $containerWidth, 480);
+    color: $dark-color;
+    z-index: 2;
+    font-size: toRem(12);
+    transition: all 0.3s ease;
+    @media (max-width: toEm(480)) {
+      display: none;
+    }
+    @media(any-hover: hover) {
+      &:hover {
+        color: $bright-color;
+      }
+    }
+    &--prev {
+      left: 0;
+      text-align: left;
+    }
+    &--next {
+      right: 0;
+      text-align: right;
+    }
+  }
+}
+
+.item-new {
+  // .item-new__link
+  &__link {
+    display: grid;
+    gap: toRem(32);
+  }
+
+  // .item-new__image
+  &__image {
+    @include img(262, 262);
+    transition: all 0.3s ease;
+    @media(any-hover: hover) {
+      &:hover{
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  // .item-new__subtitle
+  &__subtitle {
+    color: $dark-color;
+    font-size: toRem(20);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: toRem(0.2);
+    transition: all 0.3s ease;
+    @media(any-hover: hover) {
+      &:hover {
+        color: $bright-color;
+      }
+    }
+  }
+}

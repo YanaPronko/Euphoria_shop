@@ -23,24 +23,65 @@ window.addEventListener("DOMContentLoaded", () => {
   // Swiper
   const heroSlider = document.querySelector('.hero');
   if (heroSlider) {
-    const heroSwiper = new Swiper('.hero', {
+    const heroSwiper = new Swiper(".hero", {
       // Optional parameter
       lazy: true,
       // If we need pagination
       pagination: {
-        el: '.hero__pagination',
+        el: ".hero__pagination",
         clickable: true,
       },
       autoHeight: true,
+      speed: 600,
+      parallax: true,
+      loop: true,
       // Navigation arrows
       navigation: {
-        nextEl: '.hero__arrow--next',
-        prevEl: '.hero__arrow--prev',
+        nextEl: ".hero__arrow--next",
+        prevEl: ".hero__arrow--prev",
       },
     });
   }
 
+  const newSlider = document.querySelector(".new__slider");
 
+  if (newSlider) {
+    const newSwiper = new Swiper(".new__slider", {
+      // Optional parameter
+      lazy: true,
+      autoHeight: true,
+      speed: 600,
+      loop: true,
+      spaceBetween: 38,
+      slidesPerView: 4,
+      // Navigation arrows
+      navigation: {
+        nextEl: ".new__arrow--prev",
+        prevEl: ".new__arrow--next",
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1.5,
+          spaceBetween: 15,
+        },
+        480: {
+          slidesPerView: 2,
+          spaceBetween: 25,
+        },
+        // when window width is >= 480px
+        650: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        // when window width is >= 650px
+        991: {
+          slidesPerView: 4,
+          spaceBetween: 38,
+        },
+      },
+    });
+  }
 
   // const feedbackSwiper = new Swiper(".feedback__swiper", {
   //   // Optional parameter
