@@ -93,14 +93,14 @@ function toggleSlide(target) {
   target.classList.toggle('open');
 }
 
-function slideIn(target) {
-  target.classList.remove('close');
-  target.classList.add('open');
-  // target.style.maxHeight = target.scrollHeight + 'px';
-}
+// function slideIn(target) {
+//   target.classList.remove('close');
+//   target.classList.add('open');
+//   // target.style.maxHeight = target.scrollHeight + 'px';
+// }
 
-function slideOut(target) {
-  target.classList.remove('open');
-  target.classList.add('close');
-  // target.style.maxHeight = null;
-}
+// function slideOut(target) {
+//   target.classList.remove('open');
+//   target.classList.add('close');
+//   // target.style.maxHeight = null;
+// }
